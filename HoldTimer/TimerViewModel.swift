@@ -13,7 +13,7 @@ class TimerViewModel: ObservableObject {
     // MARK: - Published UI State
     @Published var holdTime: Int = 15
     @Published var numberOfSets: Int = 1
-    @Published var repeatSide: Bool = true
+    @Published var repeatSide: Bool = false
     @Published var isRunning = false
     @Published var showTimerView = false
     @Published var formattedTimer: String = "00:00"

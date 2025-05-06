@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		30F22D412DC75FFE008693B1 /* HoldTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoldTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30F22D412DC75FFE008693B1 /* HoldTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = HoldTimer.app; path = /Users/sashank.yalamanchili/Documents/GitHub/HoldTimer/build/Debug/HoldTimer.app; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,7 +33,6 @@
 			isa = PBXGroup;
 			children = (
 				307E61B32DC11D4E0086FF27 /* HoldTimer */,
-				30F22D412DC75FFE008693B1 /* HoldTimer.app */,
 			);
 			sourceTree = "<group>";
 		};
