@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		30F22D412DC75FFE008693B1 /* HoldTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = HoldTimer.app; path = /Users/sashank.yalamanchili/Documents/GitHub/HoldTimer/build/Debug/HoldTimer.app; sourceTree = "<absolute>"; };
+		30D48EC32DCB36680035CB92 /* HoldTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = HoldTimer.app; path = /Users/sashank.yalamanchili/Documents/GitHub/HoldTimer/build/Debug/HoldTimer.app; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -58,7 +58,7 @@
 			packageProductDependencies = (
 			);
 			productName = Warmup;
-			productReference = 30F22D412DC75FFE008693B1 /* HoldTimer.app */;
+			productReference = 30D48EC32DCB36680035CB92 /* HoldTimer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

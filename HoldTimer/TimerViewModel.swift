@@ -74,6 +74,13 @@ class TimerViewModel: ObservableObject {
     // MARK: - Hold Phase
     private func startHold() {
         currentLabel = "Hold"
+        if repeatSide {
+            if sideState == .left {
+                currentLabel = "Hold Left Side"
+            } else if sideState == .right {
+                currentLabel = " Hold Right Side"
+            }
+        }
         isPrepPhase = false
         runTimer(for: holdTime) { [weak self] in
             self?.playEnd()

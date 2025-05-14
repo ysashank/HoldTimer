@@ -42,7 +42,7 @@ struct HomeView: View {
                                 .padding(.horizontal)
                             
                             if viewModel.numberOfSets > 1 {
-                                VStack(alignment: .leading, spacing: 8) {
+                                VStack(spacing: 8) {
                                     Text("Rest Between Sets")
                                         .font(.body.weight(.semibold))
                                         .foregroundColor(.primary)
@@ -101,6 +101,7 @@ struct HomeView: View {
             .navigationTitle(viewModel.isRunning ? "" : "Hold Timer")
             .navigationBarTitleDisplayMode(.large)
             .background(Color(.systemBackground))
+            .padding(.horizontal)
         }
     }
 }
