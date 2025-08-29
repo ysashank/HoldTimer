@@ -11,6 +11,7 @@ import UIKit
 class SoundManager {
     static let shared = SoundManager()
     private var player: AVAudioPlayer?
+    private let impactFeedback = UIImpactFeedbackGenerator(style: .heavy)
 
     init() {
         configureAudioSession()
@@ -45,9 +46,22 @@ class SoundManager {
     }
     
     func vibrate() {
-        #if os(iOS)
-        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-        #endif
+#if os(iOS)
+        impactFeedback.prepare()
+        impactFeedback.impactOccurred()
+#endif
+    }
+    
+    func vibrateDouble() {
+#if os(iOS)
+        impactFeedback.prepare()
+        
+        // Double tap pattern for end of hold
+        impactFeedback.impactOccurred()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) { [weak self] in
+            self?.impactFeedback.impactOccurred()
+        }
+#endif
     }
 
     enum SoundType: String {

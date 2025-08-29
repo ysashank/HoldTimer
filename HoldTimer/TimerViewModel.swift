@@ -22,9 +22,9 @@ class TimerViewModel: ObservableObject {
     @Published var restTime: Int = 5
     
     var totalDuration: Int {
-        let perSide = holdTime + restTime
-        let perSet = repeatSide ? 2 * perSide : perSide
-        return 5 + numberOfSets * perSet
+        let totalHolds = repeatSide ? numberOfSets * 2 : numberOfSets
+        let totalRests = totalHolds - 1  // One less rest than holds
+        return 5 + (totalHolds * holdTime) + (totalRests * restTime)
     }
 
     var formattedTotalDuration: String {
@@ -51,6 +51,14 @@ class TimerViewModel: ObservableObject {
         currentSet = 1
         sideState = .left
         startPrep()
+        
+        // Pause timer when app backgrounds
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleAppBackground),
+            name: UIApplication.didEnterBackgroundNotification,
+            object: nil
+        )
     }
 
     func stopRoutine() {
@@ -60,6 +68,19 @@ class TimerViewModel: ObservableObject {
         isRunning = false
         showTimerView = false
         formattedTimer = "00:00"
+        
+        // Remove observer
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIApplication.didEnterBackgroundNotification,
+            object: nil
+        )
+    }
+    
+    @objc private func handleAppBackground() {
+        if isRunning {
+            stopRoutine()
+        }
     }
 
     // MARK: - Prep Phase
@@ -83,7 +104,6 @@ class TimerViewModel: ObservableObject {
         }
         isPrepPhase = false
         runTimer(for: holdTime) { [weak self] in
-            self?.playEnd()
             self?.handlePostHold()
         }
     }
@@ -125,24 +145,25 @@ class TimerViewModel: ObservableObject {
         timer?.invalidate()
         currentSeconds = seconds
         updateFormattedTimer()
-
+        
         if currentLabel == "Hold" {
             playStart()
         }
-
+        
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] t in
             guard let self = self else { return }
-
+            
             self.currentSeconds -= 1
             self.updateFormattedTimer()
-
+            
             if self.currentSeconds == 0 {
-                if self.currentLabel == "Hold" {
-                    self.playEnd()
-                }
-                t.invalidate()
-                completion()
+                            if self.currentLabel == "Hold" {
+                                self.playEnd()
+                            }
+                            t.invalidate()
+                            completion()
             } else if self.currentSeconds <= 5 {
+                // Warn sounds during last 5 seconds of ANY phase
                 SoundManager.shared.play(.warn)
             }
         }
@@ -162,6 +183,6 @@ class TimerViewModel: ObservableObject {
 
     private func playEnd() {
         SoundManager.shared.play(.end)
-        SoundManager.shared.vibrate()
+        SoundManager.shared.vibrateDouble()
     }
 }
