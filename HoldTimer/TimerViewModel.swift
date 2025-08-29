@@ -78,7 +78,7 @@ class TimerViewModel: ObservableObject {
             if sideState == .left {
                 currentLabel = "Hold Left Side"
             } else if sideState == .right {
-                currentLabel = " Hold Right Side"
+                currentLabel = "Hold Right Side"
             }
         }
         isPrepPhase = false

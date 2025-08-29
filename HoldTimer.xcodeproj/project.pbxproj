@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		30D48EC32DCB36680035CB92 /* HoldTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = HoldTimer.app; path = /Users/sashank.yalamanchili/Documents/GitHub/HoldTimer/build/Debug/HoldTimer.app; sourceTree = "<absolute>"; };
+		3021B4912E61EE4B00EED9ED /* HoldTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoldTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		307E61B32DC11D4E0086FF27 /* HoldTimer */ = {
+		3021B4932E61EE4B00EED9ED /* HoldTimer */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = HoldTimer;
 			sourceTree = "<group>";
@@ -19,7 +19,7 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		307E61AE2DC11D4E0086FF27 /* Frameworks */ = {
+		3021B48E2E61EE4B00EED9ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,74 +29,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		307E61A82DC11D4E0086FF27 = {
+		3021B4882E61EE4B00EED9ED = {
 			isa = PBXGroup;
 			children = (
-				307E61B32DC11D4E0086FF27 /* HoldTimer */,
+				3021B4932E61EE4B00EED9ED /* HoldTimer */,
+				3021B4922E61EE4B00EED9ED /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		3021B4922E61EE4B00EED9ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3021B4912E61EE4B00EED9ED /* HoldTimer.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		307E61B02DC11D4E0086FF27 /* HoldTimer */ = {
+		3021B4902E61EE4B00EED9ED /* HoldTimer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 307E61BD2DC11D500086FF27 /* Build configuration list for PBXNativeTarget "HoldTimer" */;
+			buildConfigurationList = 3021B49D2E61EE4C00EED9ED /* Build configuration list for PBXNativeTarget "HoldTimer" */;
 			buildPhases = (
-				307E61AD2DC11D4E0086FF27 /* Sources */,
-				307E61AE2DC11D4E0086FF27 /* Frameworks */,
-				307E61AF2DC11D4E0086FF27 /* Resources */,
+				3021B48D2E61EE4B00EED9ED /* Sources */,
+				3021B48E2E61EE4B00EED9ED /* Frameworks */,
+				3021B48F2E61EE4B00EED9ED /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				307E61B32DC11D4E0086FF27 /* HoldTimer */,
+				3021B4932E61EE4B00EED9ED /* HoldTimer */,
 			);
 			name = HoldTimer;
 			packageProductDependencies = (
 			);
-			productName = Warmup;
-			productReference = 30D48EC32DCB36680035CB92 /* HoldTimer.app */;
+			productName = HoldTimer;
+			productReference = 3021B4912E61EE4B00EED9ED /* HoldTimer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		307E61A92DC11D4E0086FF27 /* Project object */ = {
+		3021B4892E61EE4B00EED9ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1630;
-				LastUpgradeCheck = 1630;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					307E61B02DC11D4E0086FF27 = {
-						CreatedOnToolsVersion = 16.3;
+					3021B4902E61EE4B00EED9ED = {
+						CreatedOnToolsVersion = 16.4;
 					};
 				};
 			};
-			buildConfigurationList = 307E61AC2DC11D4E0086FF27 /* Build configuration list for PBXProject "HoldTimer" */;
+			buildConfigurationList = 3021B48C2E61EE4B00EED9ED /* Build configuration list for PBXProject "HoldTimer" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 307E61A82DC11D4E0086FF27;
+			mainGroup = 3021B4882E61EE4B00EED9ED;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 307E61A82DC11D4E0086FF27;
+			productRefGroup = 3021B4922E61EE4B00EED9ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				307E61B02DC11D4E0086FF27 /* HoldTimer */,
+				3021B4902E61EE4B00EED9ED /* HoldTimer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		307E61AF2DC11D4E0086FF27 /* Resources */ = {
+		3021B48F2E61EE4B00EED9ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -106,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		307E61AD2DC11D4E0086FF27 /* Sources */ = {
+		3021B48D2E61EE4B00EED9ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -116,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		307E61BB2DC11D500086FF27 /* Debug */ = {
+		3021B49B2E61EE4C00EED9ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -178,7 +187,7 @@
 			};
 			name = Debug;
 		};
-		307E61BC2DC11D500086FF27 /* Release */ = {
+		3021B49C2E61EE4C00EED9ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -232,7 +241,7 @@
 			};
 			name = Release;
 		};
-		307E61BE2DC11D500086FF27 /* Debug */ = {
+		3021B49E2E61EE4C00EED9ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -244,7 +253,6 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Hold Timer";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -255,10 +263,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sy.HoldTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -268,11 +276,11 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.4;
+				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Debug;
 		};
-		307E61BF2DC11D500086FF27 /* Release */ = {
+		3021B49F2E61EE4C00EED9ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -284,7 +292,6 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Hold Timer";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -295,10 +302,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sy.HoldTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -308,32 +315,32 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.4;
+				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		307E61AC2DC11D4E0086FF27 /* Build configuration list for PBXProject "HoldTimer" */ = {
+		3021B48C2E61EE4B00EED9ED /* Build configuration list for PBXProject "HoldTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				307E61BB2DC11D500086FF27 /* Debug */,
-				307E61BC2DC11D500086FF27 /* Release */,
+				3021B49B2E61EE4C00EED9ED /* Debug */,
+				3021B49C2E61EE4C00EED9ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		307E61BD2DC11D500086FF27 /* Build configuration list for PBXNativeTarget "HoldTimer" */ = {
+		3021B49D2E61EE4C00EED9ED /* Build configuration list for PBXNativeTarget "HoldTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				307E61BE2DC11D500086FF27 /* Debug */,
-				307E61BF2DC11D500086FF27 /* Release */,
+				3021B49E2E61EE4C00EED9ED /* Debug */,
+				3021B49F2E61EE4C00EED9ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 307E61A92DC11D4E0086FF27 /* Project object */;
+	rootObject = 3021B4892E61EE4B00EED9ED /* Project object */;
 }
