@@ -8,74 +8,44 @@
 import AVFoundation
 import UIKit
 
-class SoundManager {
+final class SoundManager {
     static let shared = SoundManager()
     private var player: AVAudioPlayer?
     private let impactFeedback = UIImpactFeedbackGenerator(style: .heavy)
 
-    init() {
+    private init() {
         configureAudioSession()
     }
 
     private func configureAudioSession() {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.duckOthers])
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch {
-            print("Audio session error: \(error)")
-        }
+        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.duckOthers])
+        try? AVAudioSession.sharedInstance().setActive(true)
     }
 
     func play(_ type: SoundType) {
-        guard let url = Bundle.main.url(forResource: type.rawValue, withExtension: "wav") else {
-            print("Missing sound file: \(type.rawValue).wav")
-            return
-        }
+        guard let url = Bundle.main.url(forResource: type.rawValue, withExtension: "wav"),
+              let p = try? AVAudioPlayer(contentsOf: url) else { return }
+        player = p
+        player?.play()
+    }
 
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.prepareToPlay()
-            player?.play()
-        } catch {
-            print("Sound playback error: \(error)")
-        }
-    }
-    
-    func stop() {
-        player?.stop()
-    }
-    
-    func vibrate() {
-#if os(iOS)
+    @MainActor func vibrate() {
         impactFeedback.prepare()
         impactFeedback.impactOccurred()
-#endif
     }
-    
-    func vibrateDouble() {
-#if os(iOS)
+
+    @MainActor func vibrateDouble() {
         impactFeedback.prepare()
-        
-        // Double tap pattern for end of hold
         impactFeedback.impactOccurred()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) { [weak self] in
-            self?.impactFeedback.impactOccurred()
+        Task { @MainActor in
+            try? await Task.sleep(for: .seconds(0.15))
+            impactFeedback.impactOccurred()
         }
-#endif
     }
 
     enum SoundType: String {
         case start
         case warn
         case end
-    }
-}
-
-extension UIDevice {
-    var hasHapticFeedback: Bool {
-        if #available(iOS 13.0, *) {
-            return true
-        }
-        return false
     }
 }

@@ -11,7 +11,7 @@ struct TimePickerView: View {
     @Binding var totalSeconds: Int
 
     @State private var minutes: Int = 0
-    @State private var seconds: Int = 15 // default to 15s
+    @State private var seconds: Int = 15
 
     var body: some View {
         HStack {
@@ -39,7 +39,6 @@ struct TimePickerView: View {
         }
         .frame(height: 180)
         .onAppear {
-            // Set initial picker values based on totalSeconds
             minutes = totalSeconds / 60
             seconds = totalSeconds % 60
         }
@@ -52,8 +51,6 @@ struct TimePickerView: View {
     }
 
     private func updateTotal() {
-        totalSeconds = (minutes * 60) + seconds
-        // Clamp to 1...3599 (1s to 59:59)
-        totalSeconds = max(1, min(totalSeconds, 3599))
+        totalSeconds = max(1, min((minutes * 60) + seconds, 3599))
     }
 }
