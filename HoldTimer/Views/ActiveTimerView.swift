@@ -49,7 +49,8 @@ struct ActiveTimerView: View {
     }
 
     private var timerColor: Color {
-        session.isPrepPhase ? .timerPrep :
-            (session.currentLabel == "Rest" ? .timerRest : .timerActive)
+        if session.isPrepPhase { .timerPrep }
+        else if session.isRestPhase { .timerRest }
+        else { .timerActive }
     }
 }

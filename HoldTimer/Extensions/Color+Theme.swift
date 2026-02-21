@@ -10,19 +10,13 @@ import SwiftUI
 import UIKit
 
 extension Color {
-    // MARK: - Background Layers
-
     static let backgroundPrimary = Color(UIColor.systemBackground)
     static let backgroundSecondary = Color(UIColor.secondarySystemBackground)
     static let backgroundTertiary = Color(UIColor.tertiarySystemBackground)
 
-    // MARK: - Foreground Text
-
     static let foregroundPrimary = Color(UIColor.label)
     static let foregroundSecondary = Color(UIColor.secondaryLabel)
     static let foregroundTertiary = Color(UIColor.tertiaryLabel)
-
-    // MARK: - Timer States
 
     static let timerActive = Color(UIColor(dynamicProvider: { t in
         t.userInterfaceStyle == .dark
@@ -36,16 +30,12 @@ extension Color {
     }))
     static let timerPrep = Color(.systemRed)
 
-    // MARK: - Interactive Elements
-
     static let buttonSurface = Color(UIColor(dynamicProvider: { t in
         t.userInterfaceStyle == .dark
             ? UIColor(red: 0.25, green: 0.25, blue: 0.26, alpha: 1)
             : UIColor(red: 0.60, green: 0.60, blue: 0.62, alpha: 1)
     }))
     static let destructive = Color(.systemRed)
-
-    // MARK: - Dividers
 
     static let divider = Color(UIColor.separator)
 }

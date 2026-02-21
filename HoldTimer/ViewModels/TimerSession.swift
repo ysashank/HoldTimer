@@ -16,6 +16,7 @@ class TimerSession {
     var formattedTimer: String { String(format: "%02d:%02d", currentSeconds / 60, currentSeconds % 60) }
     var currentLabel: String { phase.label(sideState: sideState, repeatSide: config.repeatSide) }
     var isPrepPhase: Bool { phase == .prep }
+    var isRestPhase: Bool { phase == .rest }
 
     private enum Phase {
         case prep, hold, rest
