@@ -3,6 +3,7 @@
 //  HoldTimer
 //
 //  Created by sashank.yalamanchili on 29.04.25.
+//  Updated by sashank.yalamanchili on 19.02.26.
 //
 
 import SwiftUI
@@ -25,6 +26,7 @@ struct TimePickerView: View {
             .clipped()
             
             Text("min")
+                .foregroundColor(.foregroundSecondary)
 
             Picker("Seconds", selection: $seconds) {
                 ForEach(0..<60) { second in
@@ -36,6 +38,7 @@ struct TimePickerView: View {
             .clipped()
             
             Text("sec")
+                .foregroundColor(.foregroundSecondary)
         }
         .frame(height: 180)
         .onAppear {

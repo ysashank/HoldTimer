@@ -14,20 +14,23 @@ struct HomeView: View {
     var body: some View {
         @Bindable var session = session
         NavigationStack {
-            VStack {
+            VStack(spacing: 0) {
                 ScrollView {
                     VStack(spacing: 24) {
                         TimePickerView(totalSeconds: $session.config.holdTime)
                             .frame(height: 180)
 
-                        Stepper("Sets: \(session.config.numberOfSets)", value: $session.config.numberOfSets, in: 1...9)
-                            .padding(.horizontal)
+                        Stepper(value: $session.config.numberOfSets, in: 1...9) {
+                            Text("Sets: \(session.config.numberOfSets)")
+                                .foregroundColor(.foregroundPrimary)
+                        }
+                        .padding(.horizontal)
 
                         if session.config.numberOfSets > 1 {
                             VStack(spacing: 8) {
                                 Text("Rest Between Sets")
                                     .font(.body.weight(.semibold))
-                                    .foregroundStyle(.primary)
+                                    .foregroundColor(.foregroundPrimary)
                                     .frame(maxWidth: .infinity, alignment: .center)
                                     .padding(.top, 8)
 
@@ -36,14 +39,19 @@ struct HomeView: View {
                             }
                         }
 
-                        Toggle("Repeat on Both Sides", isOn: $session.config.repeatSide)
-                            .padding(.horizontal)
+                        Toggle(isOn: $session.config.repeatSide) {
+                            Text("Repeat on Both Sides")
+                                .foregroundColor(.foregroundPrimary)
+                        }
+                        .padding(.horizontal)
 
                         HStack {
                             Text("Total Duration")
+                                .foregroundColor(.foregroundSecondary)
                             Spacer()
                             Text(session.config.formattedTotalDuration)
                                 .fontWeight(.bold)
+                                .foregroundColor(.foregroundPrimary)
                         }
                         .padding(.horizontal)
                     }
@@ -54,17 +62,22 @@ struct HomeView: View {
                     session.startRoutine()
                 } label: {
                     Text("Start")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.foregroundPrimary)
                         .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(.primary.opacity(0.1))
-                        .foregroundStyle(.primary)
-                        .clipShape(.rect(cornerRadius: 12))
+                        .padding(.horizontal, 80)
+                        .padding(.vertical, 20)
+                        .background(
+                            Capsule()
+                                .fill(Color.buttonSurface.opacity(0.40))
+                        )
                 }
                 .padding()
             }
             .navigationTitle("Hold Timer")
             .navigationBarTitleDisplayMode(.large)
-            .background(.background)
+            .background(Color.backgroundPrimary)
             .padding(.horizontal)
             .fullScreenCover(isPresented: $session.isRunning) {
                 ActiveTimerView(session: session)

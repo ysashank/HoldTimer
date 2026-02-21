@@ -15,13 +15,13 @@ struct ActiveTimerView: View {
             VStack(spacing: 8) {
                 Text(session.currentLabel)
                     .font(.title)
-                    .foregroundStyle(.secondary)
+                    .foregroundColor(.foregroundSecondary)
 
                 Text(session.formattedTimer)
                     .font(.system(size: 98, weight: .medium, design: .rounded))
-                    .foregroundStyle(
-                        session.isPrepPhase ? Color.red :
-                            (session.currentLabel == "Rest" ? Color.yellow : Color.primary)
+                    .foregroundColor(
+                        session.isPrepPhase ? .timerPrep :
+                            (session.currentLabel == "Rest" ? .timerRest : .timerActive)
                     )
                     .frame(height: 120)
             }
@@ -33,18 +33,18 @@ struct ActiveTimerView: View {
                 session.stopRoutine()
             } label: {
                 Text("Stop")
-                    .foregroundStyle(.red)
+                    .foregroundColor(.destructive)
                     .frame(width: 84, height: 84)
                     .overlay {
                         Circle()
-                            .stroke(Color.red, lineWidth: 1)
+                            .stroke(Color.destructive, lineWidth: 1)
                     }
             }
             .opacity(0.56)
             .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.background)
+        .background(Color.backgroundPrimary)
         .padding(.horizontal)
     }
 }
