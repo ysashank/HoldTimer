@@ -3,35 +3,49 @@
 //  HoldTimer
 //
 //  Created by sashank.yalamanchili on 19.02.26.
+//  Updated by sashank.yalamanchili on 21.02.26.
 //
 
 import SwiftUI
+import UIKit
 
 extension Color {
     // MARK: - Background Layers
 
-    static let backgroundPrimary = Color.black
-    static let backgroundSecondary = Color(red: 0.18, green: 0.18, blue: 0.19)
-    static let backgroundTertiary = Color(red: 0.22, green: 0.22, blue: 0.23)
+    static let backgroundPrimary = Color(UIColor.systemBackground)
+    static let backgroundSecondary = Color(UIColor.secondarySystemBackground)
+    static let backgroundTertiary = Color(UIColor.tertiarySystemBackground)
 
     // MARK: - Foreground Text
 
-    static let foregroundPrimary = Color(red: 0.92, green: 0.92, blue: 0.93)
-    static let foregroundSecondary = Color(red: 0.65, green: 0.65, blue: 0.67)
-    static let foregroundTertiary = Color(red: 0.48, green: 0.48, blue: 0.50)
+    static let foregroundPrimary = Color(UIColor.label)
+    static let foregroundSecondary = Color(UIColor.secondaryLabel)
+    static let foregroundTertiary = Color(UIColor.tertiaryLabel)
 
     // MARK: - Timer States
 
-    static let timerActive = Color(red: 0.75, green: 0.80, blue: 0.85)
-    static let timerRest = Color(red: 0.85, green: 0.82, blue: 0.75)
-    static let timerPrep = Color(red: 0.70, green: 0.45, blue: 0.45)
+    static let timerActive = Color(UIColor(dynamicProvider: { t in
+        t.userInterfaceStyle == .dark
+            ? UIColor(red: 0.75, green: 0.80, blue: 0.85, alpha: 1)
+            : UIColor(red: 0.20, green: 0.42, blue: 0.62, alpha: 1)
+    }))
+    static let timerRest = Color(UIColor(dynamicProvider: { t in
+        t.userInterfaceStyle == .dark
+            ? UIColor(red: 0.85, green: 0.82, blue: 0.75, alpha: 1)
+            : UIColor(red: 0.55, green: 0.42, blue: 0.15, alpha: 1)
+    }))
+    static let timerPrep = Color(.systemRed)
 
     // MARK: - Interactive Elements
 
-    static let buttonSurface = Color(red: 0.25, green: 0.25, blue: 0.26)
-    static let destructive = Color(red: 0.70, green: 0.45, blue: 0.45)
+    static let buttonSurface = Color(UIColor(dynamicProvider: { t in
+        t.userInterfaceStyle == .dark
+            ? UIColor(red: 0.25, green: 0.25, blue: 0.26, alpha: 1)
+            : UIColor(red: 0.60, green: 0.60, blue: 0.62, alpha: 1)
+    }))
+    static let destructive = Color(.systemRed)
 
     // MARK: - Dividers
 
-    static let divider = Color(red: 0.28, green: 0.28, blue: 0.29)
+    static let divider = Color(UIColor.separator)
 }

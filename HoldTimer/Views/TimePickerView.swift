@@ -18,7 +18,9 @@ struct TimePickerView: View {
         HStack {
             Picker("Minutes", selection: $minutes) {
                 ForEach(0..<60) { minute in
-                    Text("\(minute)").tag(minute)
+                    Text("\(minute)")
+                        .foregroundColor(.foregroundPrimary)
+                        .tag(minute)
                 }
             }
             .pickerStyle(.wheel)
@@ -30,7 +32,9 @@ struct TimePickerView: View {
 
             Picker("Seconds", selection: $seconds) {
                 ForEach(0..<60) { second in
-                    Text("\(second)").tag(second)
+                    Text("\(second)")
+                        .foregroundColor(.foregroundPrimary)
+                        .tag(second)
                 }
             }
             .pickerStyle(.wheel)

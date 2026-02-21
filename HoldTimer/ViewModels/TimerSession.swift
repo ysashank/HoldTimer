@@ -97,7 +97,7 @@ class TimerSession {
         currentSeconds = seconds
         if phase == .hold { playStart() }
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] t in
-            MainActor.assumeIsolated {
+            Task { @MainActor [weak self] in
                 guard let self else { return }
                 self.currentSeconds -= 1
                 if self.currentSeconds == 0 {

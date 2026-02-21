@@ -3,6 +3,7 @@
 //  HoldTimer
 //
 //  Created by sashank.yalamanchili on 19.02.26.
+//  Updated by sashank.yalamanchili on 21.02.26.
 //
 
 import SwiftUI
@@ -11,40 +12,44 @@ struct ActiveTimerView: View {
     var session: TimerSession
 
     var body: some View {
-        VStack {
-            VStack(spacing: 8) {
+        ZStack {
+            Color.backgroundPrimary.ignoresSafeArea()
+
+            VStack(spacing: 0) {
                 Text(session.currentLabel)
-                    .font(.title)
+                    .font(.title3)
                     .foregroundColor(.foregroundSecondary)
+                    .padding(.top, 24)
+
+                Spacer()
 
                 Text(session.formattedTimer)
-                    .font(.system(size: 98, weight: .medium, design: .rounded))
-                    .foregroundColor(
-                        session.isPrepPhase ? .timerPrep :
-                            (session.currentLabel == "Rest" ? .timerRest : .timerActive)
-                    )
-                    .frame(height: 120)
-            }
-            .padding(.top, 24)
+                    .font(.system(size: 96, weight: .bold, design: .rounded))
+                    .foregroundColor(timerColor)
 
-            Spacer()
+                Spacer()
 
-            Button {
-                session.stopRoutine()
-            } label: {
-                Text("Stop")
-                    .foregroundColor(.destructive)
-                    .frame(width: 84, height: 84)
-                    .overlay {
-                        Circle()
-                            .stroke(Color.destructive, lineWidth: 1)
-                    }
+                Button {
+                    session.stopRoutine()
+                } label: {
+                    Text("Stop")
+                        .font(.title3)
+                        .foregroundColor(.foregroundTertiary)
+                        .padding(.horizontal, 80)
+                        .padding(.vertical, 32)
+                        .background(
+                            Capsule()
+                                .fill(Color.buttonSurface.opacity(0.16))
+                        )
+                }
+                .padding(.bottom, 40)
             }
-            .opacity(0.56)
             .padding()
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.backgroundPrimary)
-        .padding(.horizontal)
+    }
+
+    private var timerColor: Color {
+        session.isPrepPhase ? .timerPrep :
+            (session.currentLabel == "Rest" ? .timerRest : .timerActive)
     }
 }
